@@ -1,23 +1,6 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
-#df=pd.DataFrame(np.random.randn(20,3),columns=['a','b','c'])
-#st.line_chart(df)
-##data=np.random.randn(1000, 2)
-##data
-##df=pd.DataFrame(data / [50, 50] + [37.76, -122.4],columns=['lat','lon'])
-##df
-##st.map(df)
-##if st.sidebar.checkbox('Show it'):
-##    chart_data = pd.DataFrame(
-##    np.random.randn(20, 3),
-##    columns=['a', 'b', 'c'])
-##    chart_data
-##    
-##df = pd.DataFrame({'first column': [1, 2, 3, 4],'second column': [10, 20, 30, 40]})
-##
-##option = st.sidebar.selectbox('Which number do you like best?',['sweety','Rohithya','Aaa','Bss'])
-##st.sidebar('You selected: ', option)
 st.title('BMI CALCULATOR')
 w=st.number_input("Weight(kgs)")
 h=st.number_input('Height(feet)')
