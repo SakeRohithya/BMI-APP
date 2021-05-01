@@ -1,0 +1,59 @@
+import streamlit as st
+import numpy as np
+import matplotlib.pyplot as plt
+st.title('BMI CALCULATOR')
+"Author LinkedIn profile:https://www.linkedin.com/in/sake-rohithya-8bb2501a6"
+w=st.number_input("Weight(kgs)")
+h=st.number_input('Height(feet)')
+if w<0:
+    raise Exception('Weight should be positive')
+if h<0:
+    raise Exception('Height should be positive')
+try:
+    Bmi=w/(h*0.3048)**2
+except:
+    Bmi=0
+'Your BMI: ',str(round(Bmi,1)),'(kg/m2)'
+
+def show(x):
+    'You fall in ',x,' category'
+if Bmi<18.5:
+    x='Underweight'
+elif Bmi<=24.9:
+    x='Normal weight'
+elif Bmi<=29.9:
+    x='Overweight'
+else:
+    x='Obesity'
+
+show(x)
+
+weight=np.linspace(10,120)
+bmis=[18.5,25,30]
+ht=[]
+for i in bmis:
+    height=((weight/i)**0.5)/0.3048
+    ht.append(height)
+
+fig=plt.figure()
+ax=fig.add_subplot(1,1,1)
+for i in range(len(bmis)):
+    ax.plot(weight,ht[i],label='BMI:'+str(bmis[i]))
+    
+ax.scatter(w,h,label='InputData')    
+ax.legend()
+ax.set_xlabel('Weight(kgs)')
+ax.set_ylabel('Height(ft)')    
+st.write(fig)
+
+
+
+    
+
+
+st.header('BMI Categories:')
+'Underweight = < 18.5'
+'Normal weight = 18.5–24.9'
+'Overweight = 25–29.9'
+'Obesity = BMI of 30 or greater'
+
