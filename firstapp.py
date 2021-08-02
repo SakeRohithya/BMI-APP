@@ -2,7 +2,6 @@ import streamlit as st
 import numpy as np
 import matplotlib.pyplot as plt
 st.title('BMI CALCULATOR')
-"Author LinkedIn profile:https://www.linkedin.com/in/sake-rohithya-8bb2501a6"
 w=st.number_input("Weight(kgs)")
 h=st.number_input('Height(feet)')
 if w<0:
